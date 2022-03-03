@@ -9,7 +9,9 @@ import 'package:get/get.dart';
 class LoginPage extends GetView{
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: _buildBody());
+    return SafeArea(child: GestureDetector(
+
+        child: _buildBody()));
   }
 
  Widget _buildBody()=>Scaffold(

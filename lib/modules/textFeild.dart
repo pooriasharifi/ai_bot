@@ -61,6 +61,7 @@ class TxtFeild extends StatelessWidget {
           obscureText: obscureText,
           decoration: InputDecoration(
               labelText: labelText,
+
               fillColor: fill,
               labelStyle: Get.textTheme.subtitle1,
               filled: true,

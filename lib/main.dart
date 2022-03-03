@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
         ),
         subtitle1: TextStyle(
           fontSize: 16,
-          color: backLight
+          color: backLight,
+
         )
       ),
       backgroundColor: background,
