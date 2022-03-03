@@ -1,4 +1,5 @@
 import 'package:ai_bot/modules/constans.dart';
+import 'package:ai_bot/modules/preference.dart';
 import 'package:ai_bot/screen/controllers/signalController.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,14 @@ class SignalPage extends GetView{
    SignalController controller =Get.put(SignalController());
 
    return GetBuilder<SignalController>(builder: (controller){
+     controller.buyIndicator();
+     controller.sellIndicator();
      if(controller.loading.value==true){
        return Center(child: SpinKitFadingCircle(color: sec,),);
      }
      return Scaffold(
        appBar: AppBar(
-         title: Text('usd / gpy'),
+         title: Text('${SimpleUserPreferences.getNameSignalPage()}'),
        ),
        body: SingleChildScrollView(
          child: Center(
@@ -52,7 +55,7 @@ class SignalPage extends GetView{
                      Container(
                        width: Get.width/3,
                        height: 35,
-                       color: Colors.red,
+                       color: controller.sell.value?Colors.red:Colors.red.withOpacity(.2),
                        child: Center(
                            child: Row(
                    mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +69,7 @@ class SignalPage extends GetView{
                ,Container(
                        width: Get.width/3,
                        height: 35,
-                       color: Colors.green,
+                       color: controller.buy.value?Colors.green:Colors.green.withOpacity(.2),
                        child: Center(child: Row(
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [

@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'modules/bottomNav.dart';
+import 'modules/preference.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  runApp(MyApp());
+  await SimpleUserPreferences.init();
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 

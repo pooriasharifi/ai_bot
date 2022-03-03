@@ -1,5 +1,6 @@
 import 'package:ai_bot/modules/button.dart';
 import 'package:ai_bot/modules/constans.dart';
+import 'package:ai_bot/modules/preference.dart';
 import 'package:ai_bot/modules/textFeild.dart';
 import 'package:ai_bot/screen/Models/symbols.dart';
 import 'package:ai_bot/screen/controllers/homeController.dart';
@@ -9,18 +10,18 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends GetView {
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.put(HomeController());
-    controller.setData();
     return SafeArea(child: _buildBody());
   }
 
   Widget _buildBody() {
     HomeController controller = Get.put(HomeController());
-    return Obx((){
+  controller.setData();
+    return GetBuilder<HomeController>(builder: (controller){
       if (controller.loading.value) {
         return Center(
           child: SpinKitFadingCircle(
@@ -147,7 +148,7 @@ class HomePage extends GetView {
                         ),
                         iconColor: wh,
                         leading: data.logoUrl.length == 0
-                            ? null
+                            ? Container(height: 35,width: 35,)
                             : data.logoUrl.split('.svg').length == 2
                                 ? (data.logoUrl.split('TRX').length == 2
                                     ? SvgPicture.network(
@@ -178,7 +179,12 @@ class HomePage extends GetView {
                                     fit: BoxFit.cover,
                                   ),
                         contentPadding: EdgeInsets.symmetric(vertical: 5),
-                        onTap: () => Get.toNamed('/signal'),
+                        onTap: () async {
+                          Get.toNamed('/signal');
+                          await SimpleUserPreferences.setNameSignalPage(data.name);
+
+
+                        },
                       );
                     }),
               )

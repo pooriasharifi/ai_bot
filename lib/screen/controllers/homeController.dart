@@ -14,8 +14,6 @@ class HomeController extends GetxController{
   RxList<FetchData> data = <FetchData>[].obs;
 
 
-
-
   setData()async{
     var url = Uri.parse('https://api.nomics.com/v1/currencies?key=7a8f943a531b069cc54dcd7d9f93e35d1c39324f&ids=BTC,ETH,XRP,USDT,BNB,USDC,ADA,SOL,LUNA,AVAX,BUSD,DOGE,UST,WBTC,SHIB,MATIC,CRO,DOT,DAI,LTC,ATOM,LINK,TRX,FTT,BDH,LEO,ALGO&attributes=id,name,logo_url&sort%09=first_priced_at');
     var response = await http.get(url, );
@@ -32,12 +30,12 @@ class HomeController extends GetxController{
         // print(element['logo_url']);
 
       });
-      
+      loading=false.obs;
+      update();
     }else{
       err=true.obs;
     }
-    loading=false.obs;
-    update();
+
     // print(await http.read(Uri.parse('https://example.com/foobar.txt')));
   }
 
