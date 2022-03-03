@@ -1,4 +1,5 @@
 import 'package:ai_bot/modules/constans.dart';
+import 'package:ai_bot/screen/views/candle.dart';
 import 'package:ai_bot/screen/views/home.dart';
 import 'package:ai_bot/screen/views/login.dart';
 import 'package:ai_bot/screen/views/signal.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/home', page: ()=>HomePage()),
         GetPage(name: '/menu', page: ()=>BottomNavBar()),
         GetPage(name: '/signal', page: ()=>SignalPage()),
+        GetPage(name: '/candle', page: ()=>CandlePage()),
       ],
     );
   }

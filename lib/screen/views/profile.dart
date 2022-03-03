@@ -44,7 +44,7 @@ controller.profileHandle();
                       child: CircleAvatar(
                         maxRadius: 80,
                         backgroundColor: backLight,
-                        child: Text('P',style: Get.textTheme.headline1,),
+                        child: Text('E',style: Get.textTheme.headline1,),
                       ),
                     ),
                   ),
