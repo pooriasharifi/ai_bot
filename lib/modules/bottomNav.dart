@@ -20,8 +20,6 @@ class BottomNavBar extends GetView{
   @override
   final List<Widget> _children = [
     SignalPage(),
-    AlertPage(),
-    SupportPage(),
     ProfilePage()
   ];
   Widget build(BuildContext context) {
@@ -48,24 +46,7 @@ class BottomNavBar extends GetView{
 
               textAlign: TextAlign.center,
             ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.add_alert),
-              title: Text('Alert'),
-              activeColor: sec,
-              inactiveColor: backLight,
 
-              textAlign: TextAlign.center,
-            ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.support_agent),
-              title: Text(
-                'Support ',
-              ),
-              activeColor: sec,
-              inactiveColor: backLight,
-
-              textAlign: TextAlign.center,
-            ),
             BottomNavyBarItem(
               icon: Icon(Icons.person),
               title: Text('Profile'),
