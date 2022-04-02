@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
     theme: ThemeData(
+      unselectedWidgetColor: wh,
       textTheme: TextTheme(
         headline1: TextStyle(
           fontSize: 40,

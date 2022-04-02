@@ -15,7 +15,7 @@ class HomeController extends GetxController{
 
 
   setData()async{
-    var url = Uri.parse('https://api.nomics.com/v1/currencies?key=7a8f943a531b069cc54dcd7d9f93e35d1c39324f&ids=BTC,ETH,XRP,USDT,BNB,USDC,ADA,SOL,LUNA,AVAX,BUSD,DOGE,UST,WBTC,SHIB,MATIC,CRO,DOT,DAI,LTC,ATOM,LINK,TRX,FTT,BDH,LEO,ALGO&attributes=id,name,logo_url&sort%09=first_priced_at');
+    var url = Uri.parse('https://api.nomics.com/v1/currencies?key=69c3b519cb33290b261bdcbc0bd9d97cd7235575&ids=BTC,ETH,XRP,USDT,BNB,USDC,ADA,SOL,LUNA,AVAX,BUSD,DOGE,UST,WBTC,SHIB,MATIC,CRO,DOT,DAI,LTC,ATOM,LINK,TRX,FTT,BDH,LEO,ALGO&attributes=id,name,logo_url&sort%09=first_priced_at');
     var response = await http.get(url, );
     data.clear();
 
@@ -34,6 +34,8 @@ class HomeController extends GetxController{
       update();
     }else{
       err=true.obs;
+      loading=false.obs;
+      update();
     }
 
     // print(await http.read(Uri.parse('https://example.com/foobar.txt')));

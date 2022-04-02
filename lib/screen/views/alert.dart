@@ -29,7 +29,34 @@ class AlertPage extends GetView{
             color: sec,
           ),
         );
-      } else if (controller.err.value) {}
+      } else if (controller.err.value) {
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('error to connect Server',style: Get.textTheme.headline3,),
+              SizedBox(height: 20,),
+              GestureDetector(
+
+                onTap: (){
+                  controller.setData();
+                  controller.loading.value=true;
+                  controller.refresh();
+                },
+                child: Btn(
+                  title: 'Refresh',
+                  hasBorder: true,
+                  customHeight: true,
+                  customHeightSize: 40.toDouble(),
+                  customWidth: true,
+                  customWidthtSize: Get.width/2,
+                ),
+              )
+            ],
+          ),
+        );
+      }
       return Scaffold(
         appBar: AppBar(
           title: Text('Home'),

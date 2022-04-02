@@ -40,6 +40,8 @@ class AlertController extends GetxController{
 
     }else{
       err=true.obs;
+      loading=false.obs;
+      update();
     }
 
     // print(await http.read(Uri.parse('https://example.com/foobar.txt')));

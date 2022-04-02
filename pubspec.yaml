@@ -41,6 +41,7 @@ dependencies:
   http: ^0.13.4
   flutter_svg: ^1.0.3
   shared_preferences: ^2.0.13
+  syncfusion_flutter_charts: ^19.4.56
 
 dev_dependencies:
   flutter_test:

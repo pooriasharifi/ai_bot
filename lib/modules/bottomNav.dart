@@ -1,11 +1,15 @@
 
 
 
+// ignore_for_file: annotate_overrides, prefer_const_constructors, override_on_non_overriding_member
+
 import 'package:ai_bot/modules/constans.dart';
 import 'package:ai_bot/screen/controllers/bottomNavController.dart';
 import 'package:ai_bot/screen/views/alert.dart';
+import 'package:ai_bot/screen/views/candle.dart';
 import 'package:ai_bot/screen/views/home.dart';
 import 'package:ai_bot/screen/views/profile.dart';
+import 'package:ai_bot/screen/views/signal.dart';
 import 'package:ai_bot/screen/views/support.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +19,7 @@ import 'package:get/get.dart';
 class BottomNavBar extends GetView{
   @override
   final List<Widget> _children = [
-    HomePage(),
+    SignalPage(),
     AlertPage(),
     SupportPage(),
     ProfilePage()
